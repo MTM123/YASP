@@ -62,10 +62,10 @@ case "$1" in
 		cd "$basedir"
 	;;
 	"a" | "api")
-		cd "$basedir/EmpireCraft-API"
+		cd "$basedir/${FORK_NAME}-API"
 	;;
 	"s" | "server")
-		cd "$basedir/EmpireCraft-Server"
+		cd "$basedir/${FORK_NAME}-Server"
 	;;
 	"setup")
 		if [[ -f ~/.bashrc ]] ; then
@@ -75,11 +75,11 @@ case "$1" in
 			fi
 			(grep "alias $NAME=" ~/.bashrc > /dev/null) && (sed -i "s|alias $NAME=.*|alias $NAME='. $SOURCE'|g" ~/.bashrc) || (echo "alias $NAME='. $SOURCE'" >> ~/.bashrc)
 			alias "$NAME=. $SOURCE"
-			echo "You can now just type '$NAME' at any time to access the paper tool."
+			echo "You can now just type '$NAME' at any time to access the yasp tool."
 		fi
 	;;
 	*)
-		echo "EmpireCraft build tool command. This provides a variety of commands to build and manage the PaperMC build"
+		echo "${FORK_NAME} build tool command. This provides a variety of commands to build and manage the PaperMC build"
 		echo "environment. For all of the functionality of this command to be available, you must first run the"
 		echo "'setup' command. View below for details. For essential building and patching, you do not need to do the setup."
 		echo ""
@@ -92,18 +92,18 @@ case "$1" in
 		echo ""
 		echo " These commands require the setup command before use:"
 		echo "  * r, root      | Change directory to the root of the project."
-		echo "  * a. api       | Move to the Paper-API directory."
-		echo "  * s, server    | Move to the Paper-Server directory."
+		echo "  * a. api       | Move to the ${FORK_NAME}-API directory."
+		echo "  * s, server    | Move to the ${FORK_NAME} directory."
 		echo "  * e, edit      | Use to edit a specific patch, give it the argument \"server\" or \"api\""
 		echo "                 | respectively to edit the correct project. Use the argument \"continue\" after"
 		echo "                 | the changes have been made to finish and rebuild patches. Can be called from anywhere."
 		echo ""
 		echo "  * setup        | Add an alias to .bashrc to allow full functionality of this script. Run as:"
-		echo "                 |     . ./paper setup"
-		echo "                 | After you run this command you'll be able to just run 'paper' from anywhere."
-		echo "                 | The default name for the resulting alias is 'paper', you can give an argument to override"
+		echo "                 |     . ./yasp setup"
+		echo "                 | After you run this command you'll be able to just run 'yasp' from anywhere."
+		echo "                 | The default name for the resulting alias is 'yasp', you can give an argument to override"
 		echo "                 | this default, such as:"
-		echo "                 |     . ./paper setup example"
+		echo "                 |     . ./yasp setup example"
 		echo "                 | Which will allow you to run 'example' instead."
 	;;
 esac

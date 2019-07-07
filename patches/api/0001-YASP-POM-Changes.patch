@@ -1,0 +1,51 @@
+From 2d487fbddeb4e9387f2ca24a4470f9ff771df408 Mon Sep 17 00:00:00 2001
+From: MTM123 <matiss234@gmail.com>
+Date: Fri, 14 Dec 2018 21:52:29 -0800
+Subject: [PATCH] YASP POM Changes
+
+---
+ pom.xml | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/pom.xml b/pom.xml
+index df8fc517..7c7044e0 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -2,6 +2,7 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
++<!--
+     <parent>
+         <groupId>com.destroystokyo.paper</groupId>
+         <artifactId>paper-parent</artifactId>
+@@ -17,6 +18,17 @@
+     <name>Paper-API</name>
+     <url>https://github.com/PaperMC/Paper</url>
+     <description>An enhanced plugin API for Minecraft servers.</description>
++-->
++    <parent>
++        <groupId>lv.mtm123.yasp</groupId>
++        <artifactId>yasp-parent</artifactId>
++        <version>1.14.3-R0.1-SNAPSHOT</version>
++        <relativePath>../pom.xml</relativePath>
++    </parent>
++
++    <artifactId>yasp-api</artifactId>
++    <version>1.14.3-R0.1-SNAPSHOT</version>
++    <name>YASP-API</name>
+ 
+     <properties>
+         <!-- <skipTests>true</skipTests> Paper - This [was] not going to end well -->
+@@ -180,7 +192,7 @@
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-shade-plugin</artifactId>
+-                <version>3.1.1</version>
++                <version>3.2.1</version>
+                 <executions>
+                     <execution>
+                         <phase>package</phase>
+-- 
+2.19.0.windows.1
+
